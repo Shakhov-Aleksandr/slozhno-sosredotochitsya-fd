@@ -2,3 +2,44 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  --content--grid-column: 1;
+
+  /* --logo--text-size-116: 116px; */
+  --logo--text-size-116: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --logo--font-family: 'IBM Plex mono';
+
+  --theme-switch--font-family: 'IBM Plex mono';
+  --theme-switch--button-text-size: 18px;
+
+  --header-title--font-family: 'IBM Plex mono';
+  --header-title--text-size: 18px;
+
+  --accent-color: #FF0070;
+  --decor-corner-color: var(--accent-color);
+  --REC-color: var(--accent-color);
+  --question-title: var(--accent-color);
+  --answer-title: var(--accent-color);
+
+  --header--bg-image--dark-theme: url(../images/cover-image-dark.png);
+  --theme-switch--text-color--dark-theme: var(--accent-color);
+  --logo--text-color--dark-theme: #DB00FF;
+  --logo--shadow-color--dark-theme: var(--accent-color);
+  --header__title--text-color--dark-theme: #000028;
+  --header__title--bg-color--dark-theme: var(--accent-color);
+  
+  --question__section__heading-text-color: var(--accent-color);
+  --question__section--sides-spacing--mobile: 10px;
+  --card-title-text-color: #000028;  
+  --question__section__titles-spacing--mobile: 20px;
+  --card-spacing--mobile: 20px;
+  --header-content-space--mobile: 40px;
+  --question-section-spacing--mobile: 50px;
+  --answer-spacing--mobile: 10px;
+
+  --answer-card-description--text-color: #F1B2CE;
+
+  --logo--top-spacing: 65px;
+  --logo--botton-spacing: 55px;
+}
