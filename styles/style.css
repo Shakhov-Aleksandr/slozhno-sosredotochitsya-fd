@@ -4,12 +4,13 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background: var(--header--bg-image--dark-theme) no-repeat center  / cover;
   background-attachment: fixed;
+  padding-inline: var(--page--elements-filds--mobile);
 }
 
 .header {
+block-size: 100vh;
   display: grid;
-  padding-inline: 10px;
-  padding-block-end: 66px;
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 .decorated-zone {
@@ -24,8 +25,20 @@
   background-color: transparent;
   border-top: 1px solid var(--decor-corner-color);
   border-right: 1px solid var(--decor-corner-color);
-  inset-inline-end: 10px;
-  inset-block-start: 10px;
+  inset-inline-end: 0;
+  inset-block-start: var(--page--elements-filds--mobile);
+}
+
+.decorated-zone::after {
+  content: "";
+  block-size: 25px;
+  inline-size: 25px; 
+  position: absolute;
+  background-color: transparent;
+  border-bottom: 1px solid var(--decor-corner-color);
+  border-left: 1px solid var(--decor-corner-color);
+  inset-inline-start: 0px;
+  inset-block-end: var(--page--elements-filds--mobile);
 }
 
 .REC {
@@ -33,9 +46,8 @@
   text-transform: uppercase;
   font-family: "IBM Plex mono";
   position: absolute;
-  position: 0;
   justify-self: end;
-  margin-inline-end: 38px;
+  margin-inline-end: 28px;
   margin-block-start: 13px;
 }
 
@@ -45,33 +57,19 @@
   inline-size: 10px;
   block-size: 10px;
   margin-block-start: 5px;
-  margin-inline-start: 10px;
+  margin-inline-start: var(--page--elements-filds--mobile);
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--REC-color);
   background-color: var(--REC-color);
 }
 
-
- .decorated-zone::after {
-  content: "";
-  block-size: 25px;
-  inline-size: 25px; 
-  position: absolute;
-  background-color: transparent;
-  border-bottom: 1px solid var(--decor-corner-color);
-  border-left: 1px solid var(--decor-corner-color);
-  inset-inline-start: 10px;
-  inset-block-end: 10px;
-}
-
 .header__theme-menu {
   justify-self: end;
+  padding-block-start: var(--header--theme-switch-padding--mobile);
 }
 
 .header__theme-menu-list {
   display: flex;
-  margin-block-start: 76.5px;
-  margin-inline-end: 10px;
   gap: 13px;
   flex-direction: column;
 }
@@ -81,31 +79,38 @@
   border: none;
   text-transform: lowercase;
   font-size: var(--theme-switch--button-text-size);
-  font-family: var(--theme-switch--font-family);
+  font-family: var(--content--font-family);
   
   color: var(--theme-switch--text-color--dark-theme);
 }
 
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
 .logo {
-  font-family: var(--theme-switch--font-family);
-  font-size: var(--logo--text-size-116);
+  inline-size: min-content;
+  align-self: center;
+  font-family: var(--content--font-family);
+  font-size: var(--logo--text-size-mobile);
   font-weight: bold;
   line-height: 82.5%;
-  padding-block-start: var(--logo--top-spacing);
-  padding-block-end: var(--logo--top-spacing);
-  /* margin-inline: 10px; */
   color: var(--logo--text-color--dark-theme);
   text-shadow: var(--logo--shadow-color--dark-theme) 4px 4px 0;
 }
 
 .title-decor {
   font-size: var(--header-title--text-size);
-  font-family: var(--header-title--font-family);
+  font-family: var(--content--font-family);
   font-weight: bold;
   line-height: 1.25em;
-  /* margin-block-end: 66px; */
   color: var(--header__title--text-color--dark-theme);
   background-color: var(--header__title--bg-color--dark-theme);
+}
+
+.header-title {
+  padding-block-start: var(--header--title-padding--mobile);
 }
 
 .content {  
@@ -116,17 +121,12 @@
 
 .question__section {
   display: grid;
+  grid-template-columns: var(--mobile-layout);
   gap: var(--question__section__titles-spacing--mobile);
-  padding-inline: var(--question__section--sides-spacing--mobile);
 }
 
 .question__section__title {
   color: var(--question__section__heading-text-color);
-}
-
-.answer__card {
-  display: grid;
-  gap: 10px;
 }
 
 .answer__card-title {
@@ -137,6 +137,11 @@
 .question__section__answer-list {
   display: grid;
   gap: var(--card-spacing--mobile);
+}
+
+.answer__card {
+  display: grid;
+  gap: 10px;
 }
 
 .answer__card-description {
@@ -164,21 +169,49 @@
 .footer {
   display: grid;
   justify-content: center;
-  --logo--top-spacing: 286px;
-  --logo--botton-spacing: 286px;
 }
 
 @media (width >= 768px) {
+  .page {
+    padding-inline: var(--page--elements-filds--other);  
+  }
+
   .header {
+    grid-template-rows: 1fr min-content 1fr;
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .decorated-zone::before {
+    inset-block-start: var(--page--elements-filds--other);
+  }
+
+  .decorated-zone::after {
+    inset-block-end: var(--page--elements-filds--other);
+}
+
+  .REC {
+    margin-block-start: 24px;
+  }
+
+  .header__theme-menu {
+    padding-block-start: var(--header--theme-switch-padding--tablet);
+    grid-column: 2/3;
+  }
+
   .logo {
+    inline-size: max-content;
+    align-self: center;
     grid-column: 1/3;
+    font-size: var(--logo--text-size-other);
+  }
+
+  .header-title {
+    padding-block-start: var(--header--title-padding--tablet);
+    grid-column: 2/3;
   }
 
   .question__section {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--desktop-layout), 1fr);
   }
 
   .question__section__title {
@@ -188,10 +221,87 @@
   .question__section__answer-list {
     grid-column: 2/4;
   }
+
+  .decline-concentration {
+    grid-column: 1/4;
+  }
+
+  .picture__section {
+    grid-template-rows: min-content 1fr;
+  }
+
+  .pictures__section-title {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+
+  .pictures {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(var(--desktop-layout), 1fr);
+}
+
+  .sunset {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .ice_cream {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .tape {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .books {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .street {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+
+  .footer {
+    block-size: 100vh;  
+  }
+  
 }
 
 @media (width >= 1024px) {
-  .block {
 
+  .header {
+    block-size: 100vh;
   }
+
+  .decline-concentration {
+    grid-template-columns: repeat(3, 1fr);  
+  }
+
+  .header__theme-menu {
+    grid-column: 1/3;
+  }
+
+  .header__theme-menu {
+    padding-block-start: var(--page--elements-filds--other);
+    align-self: start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header-title {
+    padding-block-start: var(--header--title-padding--desktop);
+  }
+
 }

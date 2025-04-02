@@ -6,15 +6,42 @@
 :root {
   --content--grid-column: 1;
 
-  /* --logo--text-size-116: 116px; */
-  --logo--text-size-116: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --logo--font-family: 'IBM Plex mono';
+  --content--font-family:'IBM Plex mono';
 
-  --theme-switch--font-family: 'IBM Plex mono';
+  --logo--text-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --logo--text-size-other: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+ 
+
+
+
   --theme-switch--button-text-size: 18px;
-
-  --header-title--font-family: 'IBM Plex mono';
   --header-title--text-size: 18px;
+
+  --page--elements-filds--mobile: 10px;
+  --page--elements-filds--other: 20px;
+
+    /*header layout*/
+  --header--bottom-padding--mobile: 66px;
+  --header--bottom-padding--tablet: 183px;
+  --header--bottom-padding--desktop: 134px;
+
+
+  --header--title-padding--mobile: 55px;
+  --header--title-padding--tablet: 162px;
+  --header--title-padding--desktop: 114px;
+
+  --header--theme-switch-padding--mobile: 75px;
+  --header--theme-switch-padding--tablet: 192px;
+
+
+
+
+
+
+  --mobile-layout: 1;
+  --desktop-layout: 3;
+  --picture-rows: 4;
+
 
   --accent-color: #FF0070;
   --decor-corner-color: var(--accent-color);
