@@ -4,28 +4,13 @@
 */
 
 :root {
-  --content--grid-column: 1;
 
   --content--font-family:'IBM Plex mono';
+  --content--text-size: 18px;
+  --content--element-spacing--mobile: 10px;
+  --content--element-spacing--other: 20px;
 
-  --logo--text-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --logo--text-size-other: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
- 
-
-
-
-  --theme-switch--button-text-size: 18px;
-  --header-title--text-size: 18px;
-
-  --page--elements-filds--mobile: 10px;
-  --page--elements-filds--other: 20px;
-
-    /*header layout*/
-  --header--bottom-padding--mobile: 66px;
-  --header--bottom-padding--tablet: 183px;
-  --header--bottom-padding--desktop: 134px;
-
-
+  /*header layout*/
   --header--title-padding--mobile: 55px;
   --header--title-padding--tablet: 162px;
   --header--title-padding--desktop: 114px;
@@ -33,40 +18,18 @@
   --header--theme-switch-padding--mobile: 75px;
   --header--theme-switch-padding--tablet: 192px;
 
+  --logo--text-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --logo--text-size-other: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+ 
 
-
-
-
-
-  --mobile-layout: 1;
-  --desktop-layout: 3;
-  --picture-rows: 4;
-
-
-  --accent-color: #FF0070;
-  --decor-corner-color: var(--accent-color);
-  --REC-color: var(--accent-color);
-  --question-title: var(--accent-color);
-  --answer-title: var(--accent-color);
-
-  --header--bg-image--dark-theme: url(../images/cover-image-dark.png);
-  --theme-switch--text-color--dark-theme: var(--accent-color);
-  --logo--text-color--dark-theme: #DB00FF;
-  --logo--shadow-color--dark-theme: var(--accent-color);
-  --header__title--text-color--dark-theme: #000028;
-  --header__title--bg-color--dark-theme: var(--accent-color);
-  
-  --question__section__heading-text-color: var(--accent-color);
-  --question__section--sides-spacing--mobile: 10px;
-  --card-title-text-color: #000028;  
-  --question__section__titles-spacing--mobile: 20px;
-  --card-spacing--mobile: 20px;
-  --header-content-space--mobile: 40px;
   --question-section-spacing--mobile: 50px;
-  --answer-spacing--mobile: 10px;
+  --question-section-spacing--other: 80px;
 
+  
+  --header--bg-image--dark-theme: url(../images/cover-image-dark.png);
+  --logo--text-color--dark-theme: #DB00FF;
+  --accent-color: #FF0070;
+  --title--text-color--dark-theme: #000028;
   --answer-card-description--text-color: #F1B2CE;
 
-  --logo--top-spacing: 65px;
-  --logo--botton-spacing: 55px;
 }

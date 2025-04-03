@@ -10,9 +10,9 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --header--bg-image--light-theme: url(../images/cover-image-light.png);
-  --theme-switch-color-light-theme: #353430;
-  --logo-text-color-light-theme: #FFC2E6;
-  --logo-shadow-color-light-theme: #FF8DCB;
+  --text-color--light-theme: #353430;
+  --logo-text-color--light-theme: #FFC2E6;
+  --accent-color--light-theme: #FF8DCB;
 }
 
 .theme-light .page {
@@ -21,21 +21,108 @@
   background-attachment: fixed;
 }
 
-
 .theme-light .header__theme-menu-button {
-  color: var(--theme-switch-color-light-theme);
+  color: var(--text-color--light-theme);
+}
+
+.theme-light .header__theme-menu-button_active {
+  border: 1px solid var(--text-color--light-theme);
+  pointer-events: none;
 }
 
 .theme-light .logo {
-  color: var(--logo-text-color-light-theme);
-  text-shadow: var(--logo-shadow-color-light-theme) 2px 2px 0;
+  color: var(--logo-text-color--light-theme);
+  text-shadow: var(--accent-color--light-theme) 2px 2px 0;
 }
 
-.theme-light .decorated-zone::after, 
-.theme-light .decorated-zone::before {
-  visibility: hidden;
+.theme-light .title-decor {
+  color: var(--text-color--light-theme);
+  background-color: var(--accent-color--light-theme);
+}
+
+.theme-light .decorated-zone::after {
+  border-bottom: 1px solid var(--text-color--light-theme);
+  border-left: 1px solid var(--text-color--light-theme);
+}
+
+.decorated-zone::before {
+  border-top: 1px solid var(--text-color--light-theme);
+  border-right: 1px solid var(--text-color--light-theme);
 }
 
 .theme-light .REC {
   visibility: hidden;
+}
+
+.theme-light .question__section__title {
+  color: var(--text-color--light-theme);
+}
+
+.theme-light .answer__card-description {
+  color: var(--text-color--light-theme);
+}
+
+.theme-light .answer__card-description-link {
+  text-decoration: none;
+  text-shadow: var(--accent-color--light-theme) 2px 2px 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+  --header--bg-image--light-theme: url(../images/cover-image-light.png);
+  --text-color--light-theme: #353430;
+  --logo-text-color--light-theme: #FFC2E6;
+  --accent-color--light-theme: #FF8DCB;  
+  }
+
+.page {
+  background: var(--header--bg-image--light-theme) no-repeat center  / cover;
+  background-attachment: fixed;
+}
+
+.header__theme-menu-button {
+  color: var(--text-color--light-theme);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--text-color--light-theme);
+  pointer-events: none;
+}
+
+.logo {
+  color: var(--logo-text-color--light-theme);
+  text-shadow: var(--accent-color--light-theme) 2px 2px 0;
+}
+
+.title-decor {
+  color: var(--text-color--light-theme);
+  background-color: var(--accent-color--light-theme);
+}
+
+.decorated-zone::after {
+  border-bottom: 1px solid var(--text-color--light-theme);
+  border-left: 1px solid var(--text-color--light-theme);
+}
+
+.decorated-zone::before {
+  border-top: 1px solid var(--text-color--light-theme);
+  border-right: 1px solid var(--text-color--light-theme);
+}
+
+.REC {
+  visibility: hidden;
+}
+
+.question__section__title {
+  color: var(--text-color--light-theme);
+}
+
+.answer__card-description {
+  color: var(--text-color--light-theme);
+}
+
+.answer__card-description-link {
+  text-decoration: none;
+  text-shadow: var(--accent-color--light-theme) 2px 2px 0;
+}
 }
