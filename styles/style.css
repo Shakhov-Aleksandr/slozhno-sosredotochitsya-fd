@@ -79,8 +79,8 @@
 }
 
 .header__theme-menu-button {
-  padding-inline: 14px;
-  padding-block: 7px;
+  /* padding-inline: 14px;
+  padding-block: 7px; */
   background-color: inherit;
   border: none;
   text-transform: lowercase;
