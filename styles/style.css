@@ -79,6 +79,8 @@ block-size: 100vh;
 }
 
 .header__theme-menu-button {
+  padding-inline: 14px;
+  padding-block: 7px;
   background-color: inherit;
   border: none;
   text-transform: lowercase;
@@ -92,7 +94,15 @@ block-size: 100vh;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color), 0.4;
+  outline: 1px solid rgb(255, 0, 112, .4);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .logo {
@@ -120,7 +130,7 @@ block-size: 100vh;
 .content {  
   display: grid;
   gap: var(--question-section-spacing--mobile);
-  margin-block-start: 50px;
+  margin-block-start: 40px;
 }
 
 .question__section {
@@ -153,7 +163,19 @@ block-size: 100vh;
 
 .answer__card-description-link {
   text-decoration: none;
-  text-shadow: var(--logo--shadow-color--dark-theme) 2px 2px 0;
+  text-shadow: var(--accent-color) 2px 2px 0;
+}
+
+.answer__card-description-link:hover {
+  text-decoration: underline;
+}
+
+.answer__card-description-link:focus {
+  outline: none;
+}
+
+.answer__card-description-link:focus-visible {
+  border: 1px solid var(--answer-card-description--text-color);
 }
 
 .question__section__picture-list {
@@ -187,6 +209,7 @@ block-size: 100vh;
 @media (width >= 768px) {
   .content {
     margin-block-start: 60px;
+    gap: var(--content--element-spacing--other)
   }
 
   .page {
@@ -271,7 +294,7 @@ block-size: 100vh;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
-}
+  } 
 
   .sunset {
     grid-column: 1/3;

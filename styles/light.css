@@ -25,14 +25,38 @@
   color: var(--text-color--light-theme);
 }
 
+.theme-light .header__theme-menu-button:hover {
+  outline: 1px solid rgb(53, 52, 48, .4);
+}
+
+.theme-light .header__theme-menu-button:focus {
+  outline: none;
+}
+
+.theme-light .header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--text-color--light-theme);
+}
+
 .theme-light .header__theme-menu-button_active {
   border: 1px solid var(--text-color--light-theme);
   pointer-events: none;
 }
 
+.theme-light .answer__card-description-link:hover {
+  text-decoration: underline;
+}
+
+.theme-light .answer__card-description-link:focus {
+  outline: none;
+}
+
+.theme-light .answer__card-description-link:focus-visible {
+  border: 1px solid var(--text-color--light-theme);
+}
+
 .theme-light .logo {
   color: var(--logo-text-color--light-theme);
-  text-shadow: var(--accent-color--light-theme) 2px 2px 0;
+  text-shadow: var(--accent-color--light-theme) 4px 4px 0;
 }
 
 .theme-light .title-decor {
@@ -65,6 +89,10 @@
 .theme-light .answer__card-description-link {
   text-decoration: none;
   text-shadow: var(--accent-color--light-theme) 2px 2px 0;
+}
+
+.theme-light .answer__card-description-link:hover {
+  text-decoration: underline;
 }
 
 @media (prefers-color-scheme: light) {
