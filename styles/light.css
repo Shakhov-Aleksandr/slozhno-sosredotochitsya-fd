@@ -103,54 +103,54 @@
   --accent-color--light-theme: #FF8DCB;  
   }
 
-.page {
-  background: var(--header--bg-image--light-theme) no-repeat center  / cover;
-  background-attachment: fixed;
-}
-
-.header__theme-menu-button {
-  color: var(--text-color--light-theme);
-}
-
-.header__theme-menu-button_active {
-  border: 1px solid var(--text-color--light-theme);
-  pointer-events: none;
-}
-
-.logo {
-  color: var(--logo-text-color--light-theme);
-  text-shadow: var(--accent-color--light-theme) 2px 2px 0;
-}
-
-.title-decor {
-  color: var(--text-color--light-theme);
-  background-color: var(--accent-color--light-theme);
-}
-
-.decorated-zone::after {
-  border-bottom: 1px solid var(--text-color--light-theme);
-  border-left: 1px solid var(--text-color--light-theme);
-}
-
-.decorated-zone::before {
-  border-top: 1px solid var(--text-color--light-theme);
-  border-right: 1px solid var(--text-color--light-theme);
-}
-
-.REC {
-  visibility: hidden;
-}
-
-.question__section__title {
-  color: var(--text-color--light-theme);
-}
-
-.answer__card-description {
-  color: var(--text-color--light-theme);
-}
-
-.answer__card-description-link {
-  text-decoration: none;
-  text-shadow: var(--accent-color--light-theme) 2px 2px 0;
-}
+  .page {
+    background: var(--header--bg-image--light-theme) no-repeat center  / cover;
+    background-attachment: fixed;
+  }
+  
+  .header__theme-menu-button {
+    color: var(--text-color--light-theme);
+  }
+  
+  .header__theme-menu-button_active {
+    border: 1px solid var(--text-color--light-theme);
+    pointer-events: none;
+  }
+  
+  .logo {
+    color: var(--logo-text-color--light-theme);
+    text-shadow: var(--accent-color--light-theme) 2px 2px 0;
+  }
+  
+  .title-decor {
+    color: var(--text-color--light-theme);
+    background-color: var(--accent-color--light-theme);
+  }
+  
+  .decorated-zone::after {
+    border-bottom: 1px solid var(--text-color--light-theme);
+    border-left: 1px solid var(--text-color--light-theme);
+  }
+  
+  .decorated-zone::before {
+    border-top: 1px solid var(--text-color--light-theme);
+    border-right: 1px solid var(--text-color--light-theme);
+  }
+  
+  .REC {
+    visibility: hidden;
+  }
+  
+  .question__section__title {
+    color: var(--text-color--light-theme);
+  }
+  
+  .answer__card-description {
+    color: var(--text-color--light-theme);
+  }
+  
+  .answer__card-description-link {
+    text-decoration: none;
+    text-shadow: var(--accent-color--light-theme) 2px 2px 0;
+  }
 }
