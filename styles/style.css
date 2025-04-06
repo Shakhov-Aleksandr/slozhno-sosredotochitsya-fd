@@ -1,18 +1,17 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background: var(--header--bg-image--dark-theme) no-repeat center  / cover;
+  background: var(--header--bg-image) no-repeat center / cover;
+  background-color: var(--page--bg-color);
   background-attachment: fixed;
   padding-inline: var(--content--element-spacing--mobile);
   font-size: var(--content--text-size);
-  font-family: "IBM Plex mono";
-  line-height: 1.31em;
+  font-family: var(--content--font-family), sans-serif;
+  line-height: 1.3em;
   font-weight: normal;
 }
 
 .header {
-  block-size: 100vh;
+  min-height: 668px;
+  height: 100vh;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
 }
@@ -24,11 +23,11 @@
 .decorated-zone::before {
   content: "";
   block-size: 25px;
-  inline-size: 25px; 
+  inline-size: 25px;
   position: absolute;
   background-color: transparent;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decorated--color-accent);
+  border-right: 1px solid var(--decorated--color-accent);
   inset-inline-end: 0;
   inset-block-start: var(--content--element-spacing--mobile);
 }
@@ -36,18 +35,18 @@
 .decorated-zone::after {
   content: "";
   block-size: 25px;
-  inline-size: 25px; 
+  inline-size: 25px;
   position: absolute;
   background-color: transparent;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decorated--color-accent);
+  border-left: 1px solid var(--decorated--color-accent);
   inset-inline-start: 0px;
   inset-block-end: var(--content--element-spacing--mobile);
 }
 
-.REC {
-  color: var(--accent-color);
-  line-height: 1.4em;;
+.decorated-zone__docorated-text {
+  color: var(--decorated--color-accent);
+  line-height: 1.4em;
   text-transform: uppercase;
   position: absolute;
   justify-self: end;
@@ -55,15 +54,15 @@
   margin-block-start: 13px;
 }
 
- .REC::after {
-  content: '';
+.decorated-zone__docorated-text::after {
+  content: "";
   position: absolute;
   inline-size: 10px;
   block-size: 10px;
   margin-block-start: 7px;
   margin-inline-start: var(--content--element-spacing--mobile);
   border-radius: 50%;
-  box-shadow: 0 0 4px 2px var();
+  box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
 }
 
@@ -80,21 +79,21 @@
 
 .header__theme-menu-button {
   padding-inline: 13px;
-  /* padding-block: 7px; */
+  padding-block-end: 2px;
   background-color: inherit;
   border: none;
   text-transform: lowercase;
-  font-family: var(--content--font-family);
-  color: var(--accent-color);
+  font-family: var(--content--font-family), sans-serif;
+  color: var(--decorated--color-accent);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid currentColor;
   pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgb(255, 0, 112, .4);
+  outline: 1px solid var(--button--hover-color);
 }
 
 .header__theme-menu-button:focus {
@@ -102,24 +101,24 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid currentColor;
 }
 
 .logo {
   inline-size: min-content;
   align-self: center;
-  font-family: var(--content--font-family);
+  font-family: var(--content--font-family), sans-serif;
   font-size: var(--logo--text-size-mobile);
   font-weight: bold;
   line-height: 82.5%;
-  color: var(--logo--text-color--dark-theme);
-  text-shadow: var(--accent-color) 4px 4px 0;
+  color: var(--logo--text-color);
+  text-shadow: var(--accent-color) var(--logo--shadow-offset) var(--logo--shadow-offset) 0;
 }
 
 .title-decor {
   font-size: var(--content--text-size);
-  font-family: var(--content--font-family);
-  color: var(--title--text-color--dark-theme);
+  font-family: var(--content--font-family), sans-serif;
+  color: var(--title--text-color);
   background-color: var(--accent-color);
 }
 
@@ -127,10 +126,11 @@
   padding-block-start: var(--header--title-padding--mobile);
 }
 
-.content {  
+.content {
   display: grid;
+  margin-top: var(--page-element--spacing--mobile);
+  margin-bottom: var(--page-element--spacing--mobile);
   gap: var(--question-section-spacing--mobile);
-  margin-block-start: 40px;
 }
 
 .question__section {
@@ -140,7 +140,12 @@
 
 .question__section__title {
   font-size: var(--content--text-size);
-  color: var(--accent-color);
+  color: var(--decorated--color-accent);
+}
+
+.question__section__answer {
+  display: grid;
+  gap: 19px;
 }
 
 .question__section__answer-list {
@@ -167,7 +172,7 @@
 }
 
 .answer__card-description-link:hover {
-  text-decoration: underline;
+  border-bottom: 0.1em solid currentColor;
 }
 
 .answer__card-description-link:focus {
@@ -183,6 +188,7 @@
   grid-template-columns: 1fr;
   gap: 10px;
 }
+
 .picture__section {
   gap: var(--content--element-spacing--mobile);
   display: grid;
@@ -201,19 +207,22 @@
 }
 
 .footer {
-  block-size: 100vh;  
+  --logo--shadow-offset: var(--logo--shadow-offset--footer);
+  min-height: 668px;
+  height: 100vh;
   display: grid;
   justify-content: center;
 }
 
 @media (width >= 768px) {
-  .content {
-    margin-block-start: 60px;
-    gap: var(--content--element-spacing--other)
+  .page {
+    padding-inline: var(--content--element-spacing--other);
   }
 
-  .page {
-    padding-inline: var(--content--element-spacing--other);  
+  .content {
+    margin-top: var(--page-element--spacing--other);
+    margin-bottom: var(--page-element--spacing--other);
+    gap: var(--question-section-spacing--other);
   }
 
   .header {
@@ -227,9 +236,9 @@
 
   .decorated-zone::after {
     inset-block-end: var(--content--element-spacing--other);
-}
+  }
 
-  .REC {
+  .decorated-zone__docorated-text {
     margin-block-start: var(--content--element-spacing--other);
   }
 
@@ -239,14 +248,12 @@
   }
 
   .logo {
+    position: relative;
+    inset-inline-start: -20px;
     inline-size: max-content;
     align-self: center;
     grid-column: 1/3;
     font-size: var(--logo--text-size-other);
-  }
-
-  .content {
-    gap: var(--question-section-spacing--other);
   }
 
   .header-title {
@@ -258,24 +265,42 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .question__section__title:has( + .title-decor) {
+  .question__section__answer {
+    grid-column: 2/4;
+    gap: 0;
+  }
+
+  .question__section__title:has(+ .title-decor) {
     grid-row: 1/3;
   }
 
   .question__section__title + .title-decor {
+    padding-inline-start: 0;
     grid-column: 2/4;
-  } 
+  }
 
   .question__section__title {
     grid-column: 1/2;
   }
 
+  .question__section__answer > .title-decor {
+    grid-column: 2/4;
+    margin-inline-start: 7px;
+    margin-block-end: 20px;
+  }
+
   .question__section__answer-list {
     grid-column: 2/4;
+    padding-inline-start: 7px;
   }
 
   .decline-concentration {
+    padding-inline-start: 0;
     grid-column: 1/4;
+  }
+
+  .decline-concentration .question__section__answer-list {
+    padding-inline-start: 0;
   }
 
   .picture__section {
@@ -294,7 +319,7 @@
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
-  } 
+  }
 
   .sunset {
     grid-column: 1/3;
@@ -321,23 +346,14 @@
     grid-row: 3/4;
   }
 
+  .footer > .logo {
+    inset-inline-start: 0;
+  }
 }
 
 @media (width >= 1024px) {
-
-  .header {
-    block-size: 100vh;
-  }
-
-  .decline-concentration {
-    grid-template-columns: repeat(3, 1fr);  
-  }
-
   .header__theme-menu {
     grid-column: 1/3;
-  }
-
-  .header__theme-menu {
     padding-block-start: var(--content--element-spacing--other);
     align-self: start;
     justify-self: center;
@@ -349,8 +365,26 @@
     gap: 10px;
   }
 
+  .question__section {
+    gap: 0;
+  }
+
+  .decline-concentration {
+    margin-block-start: 20px;
+    grid-template-columns: auto;
+  }
+
+  .decline-concentration .question__section__answer-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .question__section__answer-list > .question__section__answer-list-item {
+    flex-basis: calc(95% / 3); /*(100% от родителя) - (2*20px гапы) = 95%*/
+    flex-grow: 1;
+  }
+
   .header-title {
     padding-block-start: var(--header--title-padding--desktop);
   }
-
 }

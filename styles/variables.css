@@ -1,34 +1,27 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
-
 :root {
-
   --content--font-family:'IBM Plex mono';
   --content--text-size: 18px;
   --content--element-spacing--mobile: 10px;
   --content--element-spacing--other: 20px;
 
-  /*header layout*/
+  --page-element--spacing--mobile: 40px;
+  --page-element--spacing--other: 60px;
+
   --header--title-padding--mobile: 55px;
   --header--title-padding--tablet: 162px;
   --header--title-padding--desktop: 114px;
 
-  --header--theme-switch-padding--mobile: 75px;
+  --header--theme-switch-padding--mobile: 73px;
   --header--theme-switch-padding--tablet: 192px;
 
   --logo--text-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --logo--text-size-other: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
- 
+
+  --logo--shadow-offset: var(--logo--shadow-offset--header);
+  --logo--shadow-offset--header: 4px;
+  --logo--shadow-offset--footer: 2px;
 
   --question-section-spacing--mobile: 50px;
   --question-section-spacing--other: 80px;
-
-  
-  --header--bg-image--dark-theme: url(../images/cover-image-dark.png);
-  --logo--text-color--dark-theme: #DB00FF;
-  --accent-color: #FF0070;
-  --title--text-color--dark-theme: #000028;
-  --answer-card-description--text-color: #F1B2CE;  
 }
+
