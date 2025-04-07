@@ -28,4 +28,8 @@
   .decorated-zone__docorated-text {
     visibility: hidden;
   }
+
+  .theme-dark .decorated-zone__docorated-text {
+    visibility: visible;
+  }
 }
